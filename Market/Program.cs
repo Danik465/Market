@@ -5,7 +5,7 @@ using System.Threading;
 namespace GameTestOne
 {
 
-    public class Saller
+    public class Person
     {
 
         public class Part
@@ -13,7 +13,7 @@ namespace GameTestOne
             public int x, y, oldx, oldy;
 
         }
-        public int MassageX, MassageY;
+        public int MessageX, MessageY;
         public List<Part> parts = new List<Part>();
     }
     class Program
@@ -21,15 +21,15 @@ namespace GameTestOne
 
         public static bool isStarted;
         public static int width = 120, height =28;
-        public static Saller saller;
-    
-
+        public static Person person;
+        public static move dir = move.stop;
+        public enum move { up, down, left, right, stop }
 
 
 
         public static void Init()
         {
-            saller = new Saller() { MassageX = width -119, MassageY = height -8, parts = new List<Saller.Part>() { new Saller.Part() { x = (width) - 119, y = height -27, oldx = (width / 2) - 1, oldy = height / 2 } } };
+            person = new Person() { MessageX = width -119, MessageY = height -8, parts = new List<Person.Part>() { new Person.Part() { x = (width) - 119, y = height -27, oldx = (width / 2) - 1, oldy = height / 2 } } };
             Console.CursorVisible = false;
             isStarted = true;
 
@@ -85,26 +85,148 @@ namespace GameTestOne
                 }
                 Console.Write("\n");
             }
+            
+           
 
-
-
-            Console.SetCursorPosition(saller.MassageX, saller.MassageY);
-            Console.Write("Привет Добро Пожаловать в магазин Шота у Ашота");
-            for (int i = 0; i < saller.parts.Count; i++)
+            Console.SetCursorPosition(person.MessageX, person.MessageY);
+            string source = ("Для начала игры вам нужно взять три карты, но выбирайте с умом.");
+            Console.Write("Для начала игры вам нужно взять три карты, но выбирайте с умом.");
+            for (int i = 0; i < person.parts.Count; i++)
             {
-                Console.SetCursorPosition(saller.parts[i].x, saller.parts[i].y);
-                Console.Write("1 ШМОТКА");
-                Console.SetCursorPosition(saller.parts[i].x, saller.parts[i].y+1);
-                Console.Write("2 ШМОТКА");
-                Console.SetCursorPosition(saller.parts[i].x, saller.parts[i].y + 2);
-                Console.Write("3 ШМОТКА");
-                Console.SetCursorPosition(saller.parts[i].x, saller.parts[i].y + 3);
-                Console.Write("4 ШМОТКА");
-                Console.SetCursorPosition(saller.parts[i].x, saller.parts[i].y + 4);
-                Console.Write("5 ШМОТКА");
+                // Remove a substring from the middle of the string.
+                string toRemove = source;
+                string result = string.Empty;
+                int z = source.IndexOf(toRemove);
+                if (i >= 0)
+                {
+                    result = source.Remove(i, toRemove.Length);
+                }
+                Console.WriteLine(source);
+                Console.WriteLine(result);
+
+                Vibor();
+                void Vibor()
+                {
+                    
+                    
+                       
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y);
+                        Console.Write("1.Wolf");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 1);
+                        Console.Write("2.Fox");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 2);
+                        Console.Write("3.turtle");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 3);
+                        Console.Write("4.ferret");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 4);
+                        Console.Write("5.bear");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 5);
+                        Console.Write("6.snake");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 6);
+                        Console.Write("7.squirrel");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 7);
+                        Console.Write("8.deer");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 8);
+                        Console.Write("9.ants");
+                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 9);
+                        Console.Write("10.goat");        
+                }
+                
+
+
+                Console.SetCursorPosition(person.MessageX, person.MessageY + 2);
+                string answer = Console.ReadLine();
+                if (answer == "1")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+
+                }
+                else if (answer == "2")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
+
+                else if (answer == "3")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
+                else if (answer == "4")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
+                else if (answer == "5")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
+                else if (answer == "6")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
+                else if (answer == "7")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
+                else if (answer == "8")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                }
+                else if (answer == "9")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
+                else if (answer == "10")
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("какая-то фраза");
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                    Console.WriteLine("   ");
+                }
             }
             
         }
+
+
+
+            
+        
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -118,10 +240,11 @@ namespace GameTestOne
             {
                
                 Draw();
-                Thread.Sleep(1000);
+                Thread.Sleep(100000);
 
             }
         }
+
     }
 }
 
