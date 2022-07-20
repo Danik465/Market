@@ -24,7 +24,7 @@ namespace GameTestOne
         public static Person person;
         public static move dir = move.stop;
         public enum move { up, down, left, right, stop }
-
+         
 
 
         public static void Init()
@@ -90,147 +90,145 @@ namespace GameTestOne
 
             Console.SetCursorPosition(person.MessageX, person.MessageY);
             string source = ("Для начала игры вам нужно взять три карты, но выбирайте с умом.");
-            Console.Write("Для начала игры вам нужно взять три карты, но выбирайте с умом.");
+            Console.Write(source);
             for (int i = 0; i < person.parts.Count; i++)
             {
-                // Remove a substring from the middle of the string.
-                string toRemove = source;
-                string result = string.Empty;
-                int z = source.IndexOf(toRemove);
-                if (i >= 0)
-                {
-                    result = source.Remove(i, toRemove.Length);
-                }
-                Console.WriteLine(source);
-                Console.WriteLine(result);
 
                 Vibor();
                 void Vibor()
                 {
-                    
-                    
-                       
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y);
-                        Console.Write("1.Wolf");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 1);
-                        Console.Write("2.Fox");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 2);
-                        Console.Write("3.turtle");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 3);
-                        Console.Write("4.ferret");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 4);
-                        Console.Write("5.bear");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 5);
-                        Console.Write("6.snake");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 6);
-                        Console.Write("7.squirrel");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 7);
-                        Console.Write("8.deer");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 8);
-                        Console.Write("9.ants");
-                        Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 9);
-                        Console.Write("10.goat");        
+
+
+
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y);
+                    Console.Write("1.Wolf(attak-3 hp-2)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 1);
+                    Console.Write("2.Fox (attak-2 hp-3)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 2);
+                    Console.Write("3.turtle (attak-1 hp-4)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 3);
+                    Console.Write("4.ferret (attak-2 hp-2)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 4);
+                    Console.Write("5.bear (attak-4 hp-2)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 5);
+                    Console.Write("6.snake (attak-1 hp-2)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 6);
+                    Console.Write("7.squirrel (attak-0 hp-2)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 7);
+                    Console.Write("8.deer (attak-4 hp-3)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 8);
+                    Console.Write("9.ants (attak-1 hp-4)");
+                    Console.SetCursorPosition(person.parts[i].x, person.parts[i].y + 9);
+                    Console.Write("10.goat (attak-1 hp-1)");
                 }
+
+
+                int koloda = 0;
+                while (koloda < 3)
+                {
+                    Console.SetCursorPosition(person.MessageX, person.MessageY + 2);
+                    string answer = Console.ReadLine();
+                    Console.SetCursorPosition(person.MessageX, person.MessageY);
+                    Console.WriteLine("                                                                         ");
+                    
+                   
+                    if (answer == "1")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Wolf    (attak-3 hp-2)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "2")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Fox     (attak-2 hp-3)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+
+                    else if (answer == "3")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Turtle  (attak-1 hp-4)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "4")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Ferret  (attak-2 hp-2)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "5")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Bear    (attak-4 hp-2)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "6")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Snake    (attak-1 hp-2)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "7")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Squirrel  (attak-0 hp-2)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "8")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Deer      (attak-4 hp-3)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "9")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Ants      (attak-1 hp-4)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else if (answer == "10")
+                    {
+                        Console.SetCursorPosition(person.MessageX, person.MessageY);
+                        Console.WriteLine("Goat      (attak-1 hp-1)");
+                        Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                        Console.WriteLine("                                                                         ");
+                    }
+                    else
+                    {
+                     Console.WriteLine("Такой карты нет, посмотри еще.");
+                    }
+                    koloda++;
+                    person.MessageY++;
+
+
+                    
+                }
+
+                Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                Console.WriteLine("                                                                         ");
+                Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
+                Console.WriteLine("                                                                         ");
                 
 
 
-                Console.SetCursorPosition(person.MessageX, person.MessageY + 2);
-                string answer = Console.ReadLine();
-                if (answer == "1")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
 
-                }
-                else if (answer == "2")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
 
-                else if (answer == "3")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
-                else if (answer == "4")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
-                else if (answer == "5")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
-                else if (answer == "6")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
-                else if (answer == "7")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
-                else if (answer == "8")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                }
-                else if (answer == "9")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
-                else if (answer == "10")
-                {
-                    Console.SetCursorPosition(person.MessageX, person.MessageY);
-                    Console.WriteLine("какая-то фраза");
-                    Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
-                    Console.WriteLine("   ");
-                }
             }
+            Console.SetCursorPosition(person.MessageX, person.MessageY);
+            Console.WriteLine("Надеюсь это окончательное решение, потому что пути назад не будет...");
+            Console.SetCursorPosition(person.MessageX, person.MessageY + 1);
             
         }
-
-
-
-            
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         static void Main(string[] args)
         {
